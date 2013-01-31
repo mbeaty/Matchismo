@@ -39,70 +39,25 @@
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D9F-WI-wef">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="29" id="pPE-4s-klV"/>
+                                    <constraint firstAttribute="width" constant="139" id="dI6-fC-o4l"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J4x-Cz-VM4">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="87" id="cbC-gI-WxC"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                                <state key="normal">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="shuffleDeck:" destination="2" eventType="touchUpInside" id="oNY-UL-h7z"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Tap to flip" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lU6-4b-CWM">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="67" id="2A4-Nz-T37"/>
-                                    <constraint firstAttribute="height" constant="21" id="d7H-t4-WYm"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="13"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Tap to re-shuffle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNz-qQ-ScL">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="101" id="Z6P-AE-7ak"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="nW4-Pp-VPh" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="02K-eT-01V"/>
-                            <constraint firstItem="J4x-Cz-VM4" firstAttribute="top" secondItem="YcX-uQ-v5e" secondAttribute="top" type="default" id="1Cj-oW-Kfv"/>
-                            <constraint firstItem="D9F-WI-wef" firstAttribute="leading" secondItem="YcX-uQ-v5e" secondAttribute="leading" type="default" id="Is5-P1-ypA"/>
-                            <constraint firstItem="bNz-qQ-ScL" firstAttribute="top" secondItem="lU6-4b-CWM" secondAttribute="top" type="default" id="MGF-K5-UA9"/>
+                            <constraint firstItem="YcX-uQ-v5e" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="IRb-Sc-q7O"/>
                             <constraint firstItem="nW4-Pp-VPh" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="N0Q-sb-ZXB"/>
-                            <constraint firstItem="lU6-4b-CWM" firstAttribute="baseline" secondItem="bNz-qQ-ScL" secondAttribute="baseline" type="default" id="OM7-bL-I8H"/>
-                            <constraint firstItem="YcX-uQ-v5e" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="65" id="VvU-5z-01s"/>
-                            <constraint firstAttribute="trailing" secondItem="bNz-qQ-ScL" secondAttribute="trailing" constant="54" id="YeX-M5-dGd"/>
-                            <constraint firstItem="J4x-Cz-VM4" firstAttribute="centerX" secondItem="bNz-qQ-ScL" secondAttribute="centerX" type="default" id="Yhj-5f-Hsx"/>
+                            <constraint firstItem="YcX-uQ-v5e" firstAttribute="trailing" secondItem="D9F-WI-wef" secondAttribute="trailing" type="default" id="Se6-dA-nTD"/>
                             <constraint firstAttribute="bottom" secondItem="D9F-WI-wef" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="bgg-D3-23D"/>
-                            <constraint firstItem="bNz-qQ-ScL" firstAttribute="top" secondItem="J4x-Cz-VM4" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="nmY-8P-p80"/>
-                            <constraint firstItem="J4x-Cz-VM4" firstAttribute="centerY" secondItem="3" secondAttribute="centerY" type="default" id="pge-wW-FFV"/>
-                            <constraint firstItem="lU6-4b-CWM" firstAttribute="top" secondItem="YcX-uQ-v5e" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="r3T-HW-UkR"/>
-                            <constraint firstItem="lU6-4b-CWM" firstAttribute="centerX" secondItem="YcX-uQ-v5e" secondAttribute="centerX" type="default" id="rSg-Ji-nLJ"/>
+                            <constraint firstItem="YcX-uQ-v5e" firstAttribute="centerY" secondItem="3" secondAttribute="centerY" type="default" id="imd-S8-IPW"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="deckTopCard" destination="YcX-uQ-v5e" id="W9g-vV-qc7"/>
-                        <outlet property="flippedTopCard" destination="J4x-Cz-VM4" id="wlr-xm-kgh"/>
                         <outlet property="flipsLabel" destination="D9F-WI-wef" id="wYE-7l-15k"/>
-                        <outlet property="tapToFlipLabel" destination="lU6-4b-CWM" id="HT7-VX-WSc"/>
-                        <outlet property="tapToShuffleLabel" destination="bNz-qQ-ScL" id="Ilb-Lv-I0y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
@@ -114,11 +69,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CardGameViewController.h"/>
             <relationships>
                 <relationship kind="action" name="flipCard:" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="deckTopCard" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="flippedTopCard" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="flipsLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="tapToFlipLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="tapToShuffleLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">

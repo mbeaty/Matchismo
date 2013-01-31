@@ -13,11 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *flipsLabel;
 @property (nonatomic) int flipCount;
-@property (weak, nonatomic) IBOutlet UIButton *flippedTopCard;
-@property (weak, nonatomic) IBOutlet UIButton *deckTopCard;
-@property (weak, nonatomic) IBOutlet UILabel *tapToFlipLabel;
-@property (weak, nonatomic) IBOutlet UILabel *tapToShuffleLabel;
-    
+@property (strong, nonatomic) PlayingCardDeck *deck;
 @end
 
 @implementation CardGameViewController
@@ -33,47 +29,36 @@
     
     _flipCount = flipCount;
     self.flipsLabel.text = [NSString stringWithFormat:@"%d", self.flipCount];
-
+    
 }
 
 - (IBAction)flipCard:(UIButton *)sender {
     
-//    sender.selected = !sender.isSelected;
-//    
-//    if (sender.isSelected) {
+//    if ([self.deck cardsInDeck] == 0) {
+//        [self shuffleDeck];
+//    }    
+    sender.selected = !sender.isSelected;
     
+    if (sender.isSelected) {
+        
         PlayingCard *card = (PlayingCard *)[self.deck drawRandomCard];
         
         if (card) {
             
-            // Assume if one is hidden the other is too.
-            if (self.flippedTopCard.hidden) {
-                self.flippedTopCard.hidden = NO;
-                self.tapToShuffleLabel.hidden = NO;
-            }
-            
-            [self.flippedTopCard setTitle:card.contents forState:UIControlStateNormal];
+            [sender setTitle:card.contents forState:UIControlStateSelected];
             
             self.flipCount++;
             
-            if (self.deck.cardsInDeck == 0) {
-                sender.hidden = YES;
-                self.tapToFlipLabel.hidden = YES;
-            }
-            
         }
-//        else {
-//            sender.hidden = YES;
-//        }
-    
-//    }
+        
+    } else {
+        if ([self.deck cardsInDeck] == 0) {
+            [self shuffleDeck];
+        }
+    }
 }
 
-- (IBAction)shuffleDeck:(UIButton *)sender {
-    sender.hidden = YES;
-    self.tapToShuffleLabel.hidden = YES;
-    self.deckTopCard.hidden = NO;
-    self.tapToFlipLabel.hidden = NO;
+- (void)shuffleDeck {
     self.flipCount = 0;
     self.deck = nil;
 }

@@ -11,6 +11,4 @@
 
 @interface CardGameViewController : UIViewController
 
-@property (strong, nonatomic) PlayingCardDeck *deck;
-
 @end
