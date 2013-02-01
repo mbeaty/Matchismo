@@ -22,24 +22,26 @@ static NSArray *validSuitsArray;
     
 }
 
-+ (NSArray *)validSuits {
-    if (!validSuitsArray) {
-        validSuitsArray = @[@"♥", @"♦", @"♠", @"♣"];
-    }
-    return validSuitsArray;
-}
 
-+ (NSArray *)rankStrings {
-    if (!rankStringsArray) {
-        rankStringsArray = @[ @"?", @"A", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", @"J", @"Q", @"K"];
-    }
-    return rankStringsArray;
-}
 
-+ (NSUInteger)maxRank {
-    // ** Slides used [self rankStrings]. While that works,
-    // it's technically not semantically correct.
-    return [PlayingCard rankStrings].count - 1;
+/** @Override */
+- (int)match:(NSArray *)otherCards {
+    
+    // ** We don't want to call super because we're overriding
+    // the entire method
+    
+    int score = 0;
+    
+    if ([otherCards count] == 1) {        
+        PlayingCard *otherCard = [otherCards lastObject];
+        if ([otherCard.suit isEqualToString:self.suit]) {
+            score = 1;
+        } else if (otherCard.rank == self.rank) {
+            score = 4;
+        }
+    }
+
+    return score;
 }
 
 - (void)setSuit:(NSString *)suit {
@@ -60,5 +62,26 @@ static NSArray *validSuitsArray;
         _rank = rank;
     }
 }
+
++ (NSArray *)validSuits {
+    if (!validSuitsArray) {
+        validSuitsArray = @[@"♥", @"♦", @"♠", @"♣"];
+    }
+    return validSuitsArray;
+}
+
++ (NSArray *)rankStrings {
+    if (!rankStringsArray) {
+        rankStringsArray = @[ @"?", @"A", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", @"J", @"Q", @"K"];
+    }
+    return rankStringsArray;
+}
+
++ (NSUInteger)maxRank {
+    // ** Slides used [self rankStrings]. While that works,
+    // it's technically not semantically correct.
+    return [PlayingCard rankStrings].count - 1;
+}
+
 
 @end
