@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D10990916BBE3D100C63067 /* card-back.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D10990716BBE3D100C63067 /* card-back.png */; };
+		3D10990A16BBE3D100C63067 /* card-back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D10990816BBE3D100C63067 /* card-back@2x.png */; };
 		3D31880516BA4DC600AF823D /* CardMatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D31880416BA4DC600AF823D /* CardMatchingGame.m */; };
 		3D85542316B51134005A335B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D85542216B51134005A335B /* UIKit.framework */; };
 		3D85542516B51134005A335B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D85542416B51134005A335B /* Foundation.framework */; };
@@ -26,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D10990716BBE3D100C63067 /* card-back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card-back.png"; sourceTree = "<group>"; };
+		3D10990816BBE3D100C63067 /* card-back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "card-back@2x.png"; sourceTree = "<group>"; };
 		3D31880316BA4DC600AF823D /* CardMatchingGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardMatchingGame.h; path = Model/CardMatchingGame.h; sourceTree = "<group>"; };
 		3D31880416BA4DC600AF823D /* CardMatchingGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardMatchingGame.m; path = Model/CardMatchingGame.m; sourceTree = "<group>"; };
 		3D85541E16B51134005A335B /* Matchismo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Matchismo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,6 +72,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D10990516BBE3D100C63067 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3D10990616BBE3D100C63067 /* images */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3D10990616BBE3D100C63067 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				3D10990716BBE3D100C63067 /* card-back.png */,
+				3D10990816BBE3D100C63067 /* card-back@2x.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
 		3D31880716BA4E1400AF823D /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,10 +138,11 @@
 			children = (
 				3D85543116B51134005A335B /* CardGameAppDelegate.h */,
 				3D85543216B51134005A335B /* CardGameAppDelegate.m */,
-				3D85543A16B51134005A335B /* MainStoryboard.storyboard */,
-				3D31880716BA4E1400AF823D /* Model */,
 				3D85543D16B51134005A335B /* CardGameViewController.h */,
 				3D85543E16B51134005A335B /* CardGameViewController.m */,
+				3D85543A16B51134005A335B /* MainStoryboard.storyboard */,
+				3D31880716BA4E1400AF823D /* Model */,
+				3D10990516BBE3D100C63067 /* Resources */,
 				3D85542916B51134005A335B /* Supporting Files */,
 			);
 			path = Matchismo;
@@ -197,6 +219,8 @@
 				3D85543716B51134005A335B /* Default@2x.png in Resources */,
 				3D85543916B51134005A335B /* Default-568h@2x.png in Resources */,
 				3D85543C16B51134005A335B /* MainStoryboard.storyboard in Resources */,
+				3D10990916BBE3D100C63067 /* card-back.png in Resources */,
+				3D10990A16BBE3D100C63067 /* card-back@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +321,7 @@
 				GCC_PREFIX_HEADER = "Matchismo/Matchismo-Prefix.pch";
 				INFOPLIST_FILE = "Matchismo/Matchismo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -308,6 +333,7 @@
 				GCC_PREFIX_HEADER = "Matchismo/Matchismo-Prefix.pch";
 				INFOPLIST_FILE = "Matchismo/Matchismo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -17,6 +17,8 @@
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @property (strong, nonatomic) CardMatchingGame *game;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
+@property (weak, nonatomic) IBOutlet UILabel *messageLabel;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *gameModeSelector;
 @end
 
 @implementation CardGameViewController
@@ -44,39 +46,74 @@
 
 - (void)updateUI
 {
-//    NSMutableString *board = [NSMutableString stringWithCapacity:24];
-//    int loopCount = 1;
+    //    NSMutableString *board = [NSMutableString stringWithCapacity:24];
+    //    int loopCount = 1;
     for (UIButton *cardButton in self.cardButtons) {
         Card *card = [self.game cardAtIndex:[self.cardButtons indexOfObject:cardButton]];
         [cardButton setTitle:card.contents forState:UIControlStateSelected];
         [cardButton setTitle:card.contents forState:UIControlStateSelected|UIControlStateDisabled];
-//        [board appendString:card.contents];
-//        [board appendString:@" "];
-//        if (loopCount % 4 == 0) {
-//            [board appendString:@"\n"];
-//        }
-//        loopCount++;
+        
+        // There's got to be a better way to do this!
+        if (card.isFaceUp) {
+            [cardButton setBackgroundImage:nil forState:UIControlStateNormal];
+        } else {
+            [cardButton setBackgroundImage:[UIImage imageNamed:@"card-back.png"] forState:UIControlStateNormal];
+            
+        }
+        
+        //        [board appendString:card.contents];
+        //        [board appendString:@" "];
+        //        if (loopCount % 4 == 0) {
+        //            [board appendString:@"\n"];
+        //        }
+        //        loopCount++;
         cardButton.selected = card.isFaceUp;
         cardButton.enabled = !card.isUnplayable;
         cardButton.alpha = card.isUnplayable ? 0.3 : 1.0;
     }
     
-//    NSLog(@"%@", board);
+    //    NSLog(@"%@", board);
     self.scoreLabel.text = [NSString stringWithFormat:@"%d", self.game.score];
+    if (self.game.flipMessage) {
+        self.messageLabel.text = [NSString stringWithFormat:@"%@", self.game.flipMessage];
+    } else {
+        self.messageLabel.text = @"";
+    }
+    self.flipsLabel.text = [NSString stringWithFormat:@"%d", self.flipCount];
 }
 
 - (void)setFlipCount:(int)flipCount
 {
     _flipCount = flipCount;
-    self.flipsLabel.text = [NSString stringWithFormat:@"%d", self.flipCount];
 }
 
 - (IBAction)flipCard:(UIButton *)sender
 {
+    if (!self.flipCount) {
+        self.gameModeSelector.enabled = NO;
+    }
+    
     [self.game flipCardAtIndex:[self.cardButtons indexOfObject:sender]];
     self.flipCount++;
     [self updateUI];
 }
 
+- (IBAction)newGame:(UIButton *)sender {
+    int gameMode = self.game.gameMode;
+    self.game = nil;
+    self.game.gameMode = gameMode;
+    self.flipCount = 0;
+    self.gameModeSelector.enabled = YES;
+    [self updateUI];
+}
+
+- (IBAction)changeGameMode:(UISegmentedControl *)sender {
+	if(sender.selectedSegmentIndex == 0){
+        self.game.gameMode = 2;
+	}
+	if(sender.selectedSegmentIndex == 1){
+        self.game.gameMode = 3;
+	}
+}
 
 @end

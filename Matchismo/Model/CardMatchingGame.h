@@ -18,5 +18,7 @@
 - (Card *)cardAtIndex:(NSUInteger)index;
 
 @property (readonly, nonatomic) int score;
+@property (readonly, nonatomic) NSString *flipMessage;
+@property (nonatomic) int gameMode;
 
 @end
